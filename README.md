@@ -2,9 +2,6 @@
 
 A modern, feature-rich countdown timer application built with HTML, CSS, and vanilla JavaScript. This project is an enhanced version of the countdown timer from the #JavaScript30 course, with a complete visual overhaul and several new features.
 
-![Screenshot of the Countdown Timer](screenshot.png)
-*(Note: You will need to create a `screenshot.png` file to display a preview of the application here.)*
-
 ---
 
 ## ✨ Features
