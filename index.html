@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+  <main class="timer" role="timer">
+    <div class="theme-switcher">
+      <input type="checkbox" id="theme-toggle">
+      <label for="theme-toggle"><span></span></label>
+    </div>
+    <div class="timer__controls">
+      <button data-time="20" class="timer__button" aria-label="Set timer for 20 seconds">20 Secs</button>
+      <button data-time="300" class="timer__button" aria-label="Set timer for 5 minutes">Work 5</button>
+      <button data-time="900" class="timer__button" aria-label="Set timer for 15 minutes">Quick 15</button>
+      <button data-time="1200" class="timer__button" aria-label="Set timer for 20 minutes">Snack 20</button>
+      <button data-time="3600" class="timer__button" aria-label="Set timer for 1 hour">Focus 60</button>
+      <form name="customForm" id="custom">
+        <label for="minutes-input" class="visually-hidden">Enter Minutes:</label>
+        <input type="text" name="minutes" id="minutes-input" placeholder="Enter Minutes">
+      </form>
+    </div>
+    <div class="display">
+      <svg class="progress-ring" width="200" height="200">
+        <circle class="progress-ring__bg" stroke-width="10" fill="transparent" r="90" cx="100" cy="100"/>
+        <circle class="progress-ring__fg" stroke-width="10" fill="transparent" r="90" cx="100" cy="100"/>
+      </svg>
+      <div class="display__text-container">
+        <h1 class="display__time-left" aria-live="polite"></h1>
+        <p class="display__end-time"></p>
+      </div>
+    </div>
+
+    <div class="timer__actions">
+      <button id="play-button" class="timer__button" hidden>Play</button>
+      <button id="pause-button" class="timer__button" hidden>Pause</button>
+      <button id="reset-button" class="timer__button" hidden>Reset</button>
+    </div>
+  </main>
+
+  <script src="scripts.js"></script>
+  <audio id="notification-sound" src="notification.mp3" preload="auto"></audio>
+</body>
+</html>
