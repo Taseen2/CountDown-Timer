@@ -8,7 +8,6 @@ const buttons = document.querySelectorAll('[data-time]');
 const alarm = document.querySelector('#notification-sound');
 const progressRing = document.querySelector('.progress-ring__fg');
 const themeToggle = document.querySelector('#theme-toggle');
-const historyList = document.querySelector('#history-list');
 const customForm = document.forms.customForm;
 const playButton = document.querySelector('#play-button');
 const pauseButton = document.querySelector('#pause-button');
@@ -41,36 +40,6 @@ function setProgress(percent) {
 }
 
 /**
- * Displays the timer history from localStorage.
- */
-function displayHistory() {
-  const history = JSON.parse(localStorage.getItem('timerHistory')) || [];
-  historyList.innerHTML = history
-    .map(item => `
-      <li>
-        <span class="duration">${Math.floor(item.duration / 60)}m ${item.duration % 60}s</span>
-        <span class="date">${new Date(item.date).toLocaleString()}</span>
-      </li>
-    `)
-    .join('');
-}
-
-/**
- * Adds a completed timer to the history.
- * @param {number} duration The duration of the timer in seconds.
- */
-function addToHistory(duration) {
-  const history = JSON.parse(localStorage.getItem('timerHistory')) || [];
-  const newEntry = {
-    duration,
-    date: new Date(),
-  };
-  const newHistory = [newEntry, ...history].slice(0, 10);
-  localStorage.setItem('timerHistory', JSON.stringify(newHistory));
-  displayHistory();
-}
-
-/**
  * The main timer function.
  * @param {number} seconds The duration of the timer in seconds.
  */
@@ -93,7 +62,6 @@ function timer(seconds) {
       clearInterval(countdown);
       alarm.play();
       setProgress(0);
-      addToHistory(timerState.totalSeconds);
       resetTimer();
       return;
     }
@@ -221,5 +189,4 @@ if (savedTheme) {
   setTheme('dark');
 }
 
-displayHistory();
 updateButtonVisibility(false);

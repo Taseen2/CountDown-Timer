@@ -15,7 +15,6 @@ This countdown timer isn't just a simple clock. It's packed with features to enh
 - **Animated Progress Ring:** A circular progress bar provides a clear visual indication of the time remaining.
 - **Light & Dark Mode:** Includes a theme switcher to toggle between light and dark modes. The application also respects your OS-level color scheme preference and saves your choice for future visits.
 - **Audio Notifications:** Plays a sound to notify you when the timer has finished.
-- **Timer History:** Keeps a log of your last 10 timers, saved locally in your browser.
 - **Preset Timers:** Quickly start a timer with preset buttons for common durations.
 - **Custom Timers:** Enter a custom time in minutes using the input form.
 - **Accessible:** Built with accessibility in mind, including ARIA attributes and keyboard-friendly navigation.
@@ -30,7 +29,6 @@ This countdown timer isn't just a simple clock. It's packed with features to enh
     - Click one of the preset buttons (e.g., "20 Secs", "Work 5") to start a timer immediately.
     - Enter a number of minutes in the input field and press Enter to start a custom timer.
 4.  **Toggle the theme:** Use the switch in the top-right corner to switch between light and dark modes.
-5.  **View your history:** Completed timers will automatically appear in the "Timer History" section.
 
 ---
 
